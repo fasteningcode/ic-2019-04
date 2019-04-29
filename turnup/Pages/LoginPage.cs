@@ -25,16 +25,20 @@ namespace turnup.Pages
         {
 
             //launch the url
-            driver.Navigate().GoToUrl("http://horse-dev.azurewebsites.net/Account/Login?");
+            //driver.Navigate().GoToUrl("http://horse-dev.azurewebsites.net/Account/Login?");
+            driver.Navigate().GoToUrl(ExcelHelpers.ReadData(2,"url"));
+
             driver.Manage().Window.Maximize();
 
             //Enter valid username
             //IWebElement username = driver.FindElement(By.Id("UserName"));
-            username.SendKeys("hari");
+            //username.SendKeys("hari");
+            username.SendKeys(ExcelHelpers.ReadData(2,"username"));
 
             //Enter valid password
             //IWebElement password = driver.FindElement(By.Id("Password"));
-            password.SendKeys("123123");
+            //password.SendKeys("123123");
+            password.SendKeys(ExcelHelpers.ReadData(2,"password"));
 
             try
             {
